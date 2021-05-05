@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==' crossorigin='anonymous'/>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <title>vue-slider</title>
+</head>
+<body>
+
+  <!-- APP -->
+  <div id="app" class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <h1>Bill Murray Like There's No Tomorrow</h1>
+
+      <button class="btn" @click="automateCarousel">START CAROUSEL</button>
+      
+      <!-- img-box -->
+      <div class="img-box">
+        <i @click="prevImg" class="fas fa-chevron-left prev"></i>
+
+        <img :src="imgSrc[counterImg]" alt="">
+
+        <!-- nav (circles) -->
+        <div class="nav">
+          <i v-for="(img, index) in imgSrc" :class="(index === counterImg) ? 'active' : null" @click="counterImg = index" class="fas fa-circle"></i>
+        </div>
+
+        <i @click="nextImg" class="fas fa-chevron-right next"></i>
+
+      </div> <!-- /img-box -->
+
+    </div> <!-- /wrapper -->
+
+
+  </div>
+  <!-- /APP -->
+  
+  <!-- SCRIPTS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
